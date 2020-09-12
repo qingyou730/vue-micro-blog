@@ -2,7 +2,7 @@
     <div class="login-user">
         <h5 style="padding: 0; font-size: 24px;">登陆</h5>
         <span class='span-login' @click="linkToReg">没有账号，此处登录</span>
-        <el-input v-model="acountNum" placeholder="手机/邮箱" style="margin: 5px 0;"></el-input>
+        <el-input v-model="acountNum" placeholder="手机/邮箱" style="margin: 8px 0;"></el-input>
         <el-input placeholder="个人空间地址" v-model="personUrl" show-password style="margin: 5px 0;"></el-input>
         <el-input placeholder="密码不能少于六位" v-model="password" show-password style="margin: 5px 0;"></el-input>
         <div class="clearfix" style='margin: 0 0 4px 0;'>
