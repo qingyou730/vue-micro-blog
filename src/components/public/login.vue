@@ -29,7 +29,7 @@ export default {
     },
     methods:{
         linkToReg() {
-
+            this.$router.push('/public/user/register');
         },
         memoryFun() {
            
@@ -56,11 +56,27 @@ export default {
                 this.$error('请输入6-16的密码');
                 return;
             }
+            let url = 'http://localhost:8081/'
+            let param = {
+                name: 123
+            }
+            this.$axios.get(url, {
+                params: param,
+            }).then((response) => {
+                let data = response.data;
+                if (data.code != 200) {
+                  console.log("接口有错返回");
+                  console.log(response);
+                }
+                this.selectList = data.data;
+                this.selects = this.selectList[0].value;
+              })
+              .catch((error) => {
+                this.$error("接口请求失败");
+              });
         },
     },
     mounted() {
-            console.log(localStorage.getItem('acountNum'), 2222)
-            console.log(localStorage.getItem('password'));
             if(localStorage.getItem('acountNum')) {
                 this.acountNum =  localStorage.getItem('acountNum');
                 this.password =  localStorage.getItem('password');

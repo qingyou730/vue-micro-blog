@@ -11,7 +11,7 @@
             <router-link to="/home">HOME</router-link>
             <router-link to="/personblog">ABOUT ME</router-link>
             <router-link to="/student">MAP</router-link>
-            <router-link to="/about/">DETAILS</router-link>
+            <router-link to="/blogDetails">DETAILS</router-link>
             <!--<router-link to="/activity">社区</router-link>--> 
           </div>
           <div class="logo">
@@ -25,18 +25,16 @@
         .
       </el-col>
     </el-row>
+
     <el-row>
-        <el-col :span="4" style="color:transparent">
-          .
-        </el-col>
-        <el-col :span="16">
+        <el-col :span="24">
           <div class="container">
             <router-view></router-view>
           </div>
         </el-col>
-        <el-col :span="4" style="color:transparent">
+        <!--<el-col :span="4" style="color:transparent">
           .
-        </el-col>
+        </el-col>-->
     </el-row>
     
   </div>
@@ -49,7 +47,8 @@ export default {
   name: 'app',
   data() {
     return{
-      searchVal: ''
+      searchVal: '',
+      pathUrl: ''
     }
   },
   components: {
@@ -60,6 +59,9 @@ export default {
       this.$router.push('/home');
       console.log(this.$route);
     },
+  },
+  mounted() {
+    console.log(this.$route, '===');
   }
 }
 </script>
@@ -113,11 +115,8 @@ export default {
     }
 }
 
-
 .container {
   width: 100%;
-  background: #b49292;
-  margin-top: 60px;
 }
 
 .nav-box,

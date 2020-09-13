@@ -1,6 +1,6 @@
 <template>
     <div>
-        个人博客
+        
     </div>
 </template>
 
@@ -9,3 +9,6 @@ export default {
     
 }
 </script>
+<style scoped>
+    
+</style>
