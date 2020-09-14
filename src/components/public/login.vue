@@ -44,32 +44,36 @@ export default {
             }
         },
         login() {
-            if(!this.acountNum) {
-                this.$error('请输入账号')
-                return;
-            }
-            if(this.password.length < 6) {
-                this.$error('密码长度不能小于6');
-                retur;
-            }
-            if(!this.password) {
-                this.$error('请输入6-16的密码');
-                return;
-            }
-            let url = 'http://localhost:8081/'
+            // if(!this.acountNum) {
+            //     this.$error('请输入账号')
+            //     return;
+            // }
+            // if(this.password.length < 6) {
+            //     this.$error('密码长度不能小于6');
+            //     retur;
+            // }
+            // if(!this.password) {
+            //     this.$error('请输入6-16的密码');
+            //     return;
+            // }
+            let url = '/personal/blogger/deploy'
             let param = {
-                name: 123
+                bloggerTitle: 123,
+                bloggerConten: 'JAVA',
+                bloggerCategory: 'code',
+                userId: 4
             }
             this.$axios.get(url, {
                 params: param,
             }).then((response) => {
-                let data = response.data;
-                if (data.code != 200) {
-                  console.log("接口有错返回");
-                  console.log(response);
-                }
-                this.selectList = data.data;
-                this.selects = this.selectList[0].value;
+                console.log(response)
+        //         let data = response.data;
+        //         if (data.code != 200) {
+        //           console.log("接口有错返回");
+        //           console.log(response);
+        //         }
+        //         this.selectList = data.data;
+        //         this.selects = this.selectList[0].value;
               })
               .catch((error) => {
                 this.$error("接口请求失败");

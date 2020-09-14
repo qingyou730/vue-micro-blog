@@ -11,9 +11,9 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-		'/mmp': {
+		'/personal': {
       // target: 'http://192.168.0.154:8984/', //对应自己的接口
-			target: 'http://192.168.0.13:8982/', //对应自己的接口 jialiangge
+			target: 'http://10.42.128.128:10001/', //对应自己的接口 jialiangge
 			changeOrigin: true,
 		},
     '/app': {
