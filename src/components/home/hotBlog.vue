@@ -33,21 +33,16 @@
                 </div>
             </el-col>
             <el-col :span='2' style="color:transparent">.</el-col>
-            <el-col :span='8'>
-                <div style="color:rgb(183, 183, 183);text-align:center;font-size:12px">
-                    ——————随机标签云——————</div>
-                <p style="font-size: 18px; text-align:center; margin:24px;color:transparent">HOT BLOGARTICLE</p>
-                <ul>
-                    <li v-for="item in freeList" :key="item.id" class="free-style">
-                        {{item.text}}<span style="color:#AAAAAA">({{item.count}})</span>
-                    </li>
-                </ul>
-            </el-col>
+            <page-rigth></page-rigth>
         </el-row>
     </div>
 </template>
 <script>
+import pageRigth from '@/components/public/pageRigth.vue'
 export default {
+    components: {
+        pageRigth,
+    },
     data() {
         return{
             currentPage: 1,
@@ -63,10 +58,6 @@ export default {
                 bloggerPv:15,
                 userId: 2
                 },
-            ],
-            freeList: [{id: 1, text: 'LifeStyle', count: 5},{id: 2, text: 'Travel', count: 9},
-                {id: 3, text: 'Personal', count: 3},{id: 4, text: 'Music', count: 6},
-                {id: 6, text: 'Food', count: 8}
             ],
         }
     },
@@ -138,11 +129,6 @@ export default {
     padding: 6px 0;
     margin: 0 auto;
   }
-  .free-style{
-      margin: 6px 0;
-      font-family: serif;
-      letter-spacing: 2px;
-      border-bottom: 1px solid #cccccc;
-  }
+
 
 </style>
