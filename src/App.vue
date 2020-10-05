@@ -10,7 +10,7 @@
             <i class="el-icon-search" style="color:#BDBDBD; font-size: 18px "></i>
             <router-link to="/home">HOME</router-link>
             <router-link to="/personblog">ABOUT ME</router-link>
-            <router-link to="/student">MAP</router-link>
+            <router-link to="/message">MESSAGE</router-link>
             <router-link to="/blogDetails">DETAILS</router-link>
             <!--<router-link to="/activity">社区</router-link>--> 
           </div>
@@ -119,11 +119,7 @@ export default {
   width: 100%;
 }
 
-.nav-box,
-.container {
-  padding-left: 5px;
-  padding-right: 200px;
-}
+
 
 
 

@@ -2,7 +2,7 @@
     <el-col :span='8'>
                 <div style="color:#bd9562;text-align:center;font-size:12px">
                     ——————随机标签云——————</div>
-                <p style="font-size: 18px; text-align:center; margin:24px;color:transparent">HOT BLOGARTICLE</p>
+                <p style="font-size: 18px; text-align:center; margin:8px;color:transparent">HOT BLOGARTICLE</p>
                 <ul>
                     <li v-for="item in freeList" :key="item.id" class="free-style">
                         {{item.text}}<span style="color:#bd9562">({{item.count}})</span>
@@ -87,6 +87,9 @@ export default {
 .hot-item{
     height: 176px;
     border-bottom: 1px solid #cccccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .hot-item-left{
     width: 30%;
@@ -94,9 +97,10 @@ export default {
 }
 .hot-item-left img{
     width: 100%;
+    height: 100%;
 }
 hot-item-rigth{
    display: inline-block;
-    width: 60%;
+    width: 50%;
 }
 </style>

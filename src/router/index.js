@@ -4,6 +4,8 @@ import homePage from '../views/homePage.vue'
 import personBlog from '../views/personBlog.vue'
 import publicRouter from '@/router/public'
 import blogDetails from '@/views/blogDetails.vue'
+import message from '@/views/message.vue'
+
 
 
 Vue.use(VueRouter)
@@ -23,7 +25,13 @@ const routes = [
         path: '/blogDetails',
         name: '个人博客',
         component: blogDetails
-      }
+      },
+      {
+        path: '/message',
+        name: '留言页面',
+        component: message
+      },
+      
 ].concat(publicRouter)
 
 const router = new VueRouter({

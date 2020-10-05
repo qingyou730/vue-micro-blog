@@ -20,9 +20,27 @@
                         </div>
                     </div>
                 </div>
-                <div style="margin: 12px auto">
+                <div  class="comment">
+                    <ul>
+                        <p style="color: rgb(189, 149, 98);border-bottom:1px solid #ccc;padding-bottom:3px">最新评论</p>
+                        <li v-for="comItem in commentList" :key="comItem.id" style="border-bottom:1px solid #ccc">
+                            <div class="com-item">
+                                <div class="image">
+                                    <img src="static/images/myblogpage/head.png" alt="">
+                                </div>
+                                <div class="text">
+                                    <div class="name">{{comItem.name}}</div>
+                                    <p style="font-size:13px;margin-top:2px">{{comItem.text}}</p>
+                                </div>
+                            </div>
+                            <div class="information">
+                                {{comItem.info}}
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div style="margin: 12px auto;text-align:center">
                     <el-pagination
-                        background
                         @size-change="handleSizeChange"
                         @current-change="handleCurrentChange"
                         :current-page="currentPage"
@@ -30,6 +48,19 @@
                         layout=" prev, pager, next, jumper"
                         :total="total">
                     </el-pagination>
+                </div>
+                <div class="submit-opinion" >
+                    <div style="padding: 6px 12px;border-bottom:1px solid #ccc">
+                        <i class="el-icon-chat-dot-round"></i>
+                    </div>
+                    <el-input
+                        type="textarea"
+                        placeholder="请输入内容"
+                        v-model="textarea">
+                    </el-input>
+                    <div style="text-align: center; margin-top:12px">
+                        <el-button type="warning" plain>发表评论</el-button>
+                    </div>
                 </div>
             </el-col>
             <el-col :span='2' style="color:transparent">.</el-col>
@@ -48,6 +79,7 @@ export default {
             currentPage: 1,
             pageSize: 1,
             total: 5,
+            textarea: "",
             hotData: [
                 {
                 bloggerId: "ynn4",
@@ -57,6 +89,30 @@ export default {
                 bloggerDate: "2020-09-11T12:00:45.000+0000",
                 bloggerPv:15,
                 userId: 2
+                },
+            ],
+            commentList: [
+                {
+                    name: 'ding玉东',
+                    text: '博客的风格真好看，爱了',
+                    info: "山西省 运城市 2020/09/12 09.44",
+                },
+                {
+                    name: 'ding玉东',
+                    text: '博客的风格真好看，爱了',
+                    info: "山西省 运城市 2020/09/12 09.44",
+                },
+                {
+                    name: 'ding玉东',
+                    text: '博客的风格真好看，爱了'
+                },
+                {
+                    name: 'ding玉东',
+                    text: '博客的风格真好看，爱了'
+                },
+                {
+                    name: 'ding玉东',
+                    text: '博客的风格真好看，爱了'
                 },
             ],
         }
@@ -129,6 +185,39 @@ export default {
     padding: 6px 0;
     margin: 0 auto;
   }
-
-
+.comment{
+    padding: 6px 8px;
+    border-radius: 4px;
+    width: 100%;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 4px #ccc;
+    margin: 16px 0;
+    box-sizing: border-box;
+}
+.comment .information{
+    text-align: right;
+    font-size: 12px;
+    color: #ccc;
+}
+.com-item{
+    display: flex;
+}
+.com-item .image{
+    margin: 5px 0;
+    width: 45px;
+}
+.com-item .image img{
+    width:100%
+} 
+.com-item .text{
+    margin: 5px 8px 0;
+}
+.submit-opinion{
+    width: 100%;
+    box-shadow: 1px 1px 3px #ccc;
+    min-height: 200px;
+}
+.submit-opinion .smile{
+    background: url("/static/image/myblogpage/opinion/smile.png") center center ;
+}
 </style>

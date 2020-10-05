@@ -26,6 +26,9 @@ export default {
         height: 280px;
         background:#F2F2F2;
         position: relative;
+        background: url('/static/images/homepage/topswiper.png.png') no-repeat center;
+        background-size: cover;
+        overflow: hidden;
 }
 .cx-blog-logo-bj .middle-desc{
     width: 30%;
